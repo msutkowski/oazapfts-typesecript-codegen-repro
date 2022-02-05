@@ -1,0 +1,19 @@
+{
+  "name": "oazapfts-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gen:all": "yarn gen:oazapfts;yarn gen:openapi; yarn gen:swagger-typescript",
+    "gen:oazapfts": "oazapfts schema.json ./outputs/oazapfts.ts",
+    "gen:openapi": "openapi-typescript schema.json --output ./outputs/openapi-typescript.ts",
+    "gen:swagger-typescript": "swagger-typescript-api -p schema.json -o ./outputs/swagger-typescript-api-output.ts"
+  },
+  "author": "Matt Sutkowski <msutkowski@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "oazapfts": "^3.5.0",
+    "openapi-typescript": "^5.1.1",
+    "swagger-typescript-api": "^9.3.1"
+  }
+}
